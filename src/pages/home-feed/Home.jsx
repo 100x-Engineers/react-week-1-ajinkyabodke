@@ -7,12 +7,15 @@ import Header from "../../components/Header";
 import Tabs from "../../components/Tabs";
 import ProfileAvatar from "../../components/Avatar";
 import Footer from "../../components/Footer";
-import { TweetContext } from "../../store/index";
+import { TweetContext } from "../../contexts/index";
+
 import { useContext } from "react";
 
 function Home() {
   const tweets = useContext(TweetContext);
-  console.log(tweets.userTweets);
+  const tweetsData = [...tweets.userTweets].reverse();
+  console.log("rever", tweetsData);
+
   return (
     <div className="bg-neutral-1000">
       <header className="top-0 flex w-full flex-col items-center bg-neutral-1000">
@@ -24,7 +27,7 @@ function Home() {
       <Tabs />
       <main className="flex w-full flex-col pb-20">
         <section>
-          {tweets.userTweets.map((tweet, index) => (
+          {tweetsData.map((tweet, index) => (
             <Tweet
               key={index}
               id={tweet.id}
@@ -40,88 +43,7 @@ function Home() {
           ))}
         </section>
 
-        {/* Tweets */}
-        {/* <section>
-          
-          <Tweet
-            name="Name"
-            handle="handle"
-            time="10h"
-            tweetdata="Don't wish for it, work for it."
-            comments="11"
-            retweets="269"
-            likes="1869"
-            reach="69.9k"
-          />
-          <Tweet
-            name="Name"
-            handle="handle"
-            time="10h"
-            tweetdata={
-              <>
-                i've seen people absolutely despise auto layout in figma but I
-                think it's a lifesaver -<br />
-                1. tidies everything nice and compact
-                <br />
-                2. makes responsive design effortless
-                <br />
-                3. no manual adjustments post any tweaks
-                <br />
-                4. saves a tonnn of time
-                <br />
-                <br />
-                Sorry, but will stay an auto layout maxi all life.
-              </>
-            }
-            comments="11"
-            retweets="269"
-            likes="1869"
-            reach="69.9k"
-          />
-          <Tweet
-            name="Name"
-            handle="handle"
-            time="10h"
-            tweetdata={
-              <>
-                Writing gets easier after the first sentence.
-                <br />
-                <br />
-                Lifting gets easier after the first set.
-                <br />
-                <br />
-                People think and think and think until they finally decide to
-                act. Their attention shifts from internal to external, and the
-                difficulty they created in their mind vanishes.
-              </>
-            }
-            comments="11"
-            retweets="269"
-            likes="1869"
-            reach="69.9k"
-          />
-          <Tweet
-            name="Name"
-            handle="handle"
-            time="10h"
-            tweetdata="Don't wish for it, work for it."
-            comments="11"
-            retweets="269"
-            likes="1869"
-            reach="69.9k"
-          />
-          <Tweet
-            name="Name"
-            handle="handle"
-            time="10h"
-            tweetdata="Don't wish for it, work for it."
-            comments="11"
-            retweets="269"
-            likes="1869"
-            reach="69.9k"
-          />
-        </section> */}
-        <Toast message="Copied to clipboard." />
+        {/* <Toast message="Copied to clipboard." /> */}
 
         <NewTweet />
 

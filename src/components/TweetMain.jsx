@@ -7,7 +7,7 @@ import { URLs } from "../constants";
 
 function TweetMain() {
   return (
-    <main className="flex h-screen justify-center bg-neutral-1000 w-full items-center">
+    <main className="flex h-screen w-full items-center justify-center bg-neutral-1000">
       <section className="flex w-full flex-col gap-10 px-7">
         <section className="flex flex-col gap-3">
           <Heading>Happening now</Heading>

@@ -5,7 +5,7 @@ import { URLs } from "../../constants";
 import { useState } from "react";
 import Button from "../../components/Button";
 import { useContext } from "react";
-import { TweetContext } from "../../store";
+import { TweetContext } from "../../contexts";
 import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 
@@ -33,7 +33,7 @@ function ComposeTweet() {
           size="md"
           onClick={async () => {
             setIsLoading(true);
-            await new Promise((resolve) => setTimeout(resolve, 1000));
+            await new Promise((resolve) => setTimeout(resolve, 300));
             console.log(userTweets);
             setUserTweets([
               ...userTweets,
@@ -49,7 +49,7 @@ function ComposeTweet() {
             setTweetText("");
           }}
         >
-          <span className="text-center text-base font-bold not-italic leading-normal text-neutral-50">
+          <span className="text-center text-base font-bold not-italic leading-normal text-neutral-50 whitespace-nowrap">
             {isLoading ? "Posting..." : "Post"}
           </span>
         </Button>

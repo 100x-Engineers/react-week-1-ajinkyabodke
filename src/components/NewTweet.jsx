@@ -1,4 +1,3 @@
-
 function NewTweet() {
   return (
     <div className="flex w-full items-center justify-center gap-3 px-4 py-2">
@@ -17,7 +16,7 @@ class="flex flex-shrink-0 grow items-center self-stretch bg-transparent text-xl 
         cols={30}
         rows={10}
         placeholder="What's happening?"
-        className="text-base font-regular w-full resize-none bg-transparent leading-normal text-neutral-50 placeholder:text-neutral-600 focus:outline-none"
+        className="font-regular w-full resize-none bg-transparent text-base leading-normal text-neutral-50 placeholder:text-neutral-600 focus:outline-none"
         defaultValue={""}
       />
     </div>

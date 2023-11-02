@@ -9,13 +9,13 @@ function CreateAccountStep3() {
   return (
     <>
       <section className="flex w-full flex-shrink-0 flex-col items-start gap-3 rounded-2xl px-0.9rem pb-5">
-        <div className="flex flex-col w-full gap-3 self-stretch">
+        <div className="flex w-full flex-col gap-3 self-stretch">
           <StepHeading>We sent you a code</StepHeading>
           <p className="text-sm font-normal leading-normal text-neutral-500">
             Enter it below to verify janedoe@gmail.com
           </p>
-          <Fieldset text="Verification code" type="text" />
-          <p className="text-sm font-normal flex justify-end leading-normal text-twitter-default">
+          <Fieldset required text="Verification code" type="text" />
+          <p className="flex justify-end text-sm font-normal leading-normal text-twitter-default">
             Didn’t receive a code?
           </p>
         </div>
@@ -23,7 +23,7 @@ function CreateAccountStep3() {
       ;
       <Link
         to={URLs.signUpStep4}
-        className="fixed bottom-16 left-1/2 -translate-x-1/2 -translate-y-1/2 transform w-20.8rem"
+        className="fixed bottom-16 left-1/2 w-20.8rem -translate-x-1/2 -translate-y-1/2 transform"
       >
         <Button variant="default" disabled={false}>
           Next

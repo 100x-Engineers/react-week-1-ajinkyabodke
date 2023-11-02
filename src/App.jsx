@@ -10,7 +10,8 @@ import HomeFeed from "./pages/home-feed/Home";
 import Profile from "./pages/user-profile/UserProfile";
 import EditProfile from "./pages/user-profile/EditProfile";
 import ComposeTweet from "./pages/compose-tweet/ComposeTweet";
-import { TweetContext, TweetProvider } from "./store";
+import { TweetProvider } from "./contexts/index";
+import { UserProvider } from "./contexts/UserContext";
 
 const router = createBrowserRouter([
   {
@@ -69,10 +70,12 @@ const router = createBrowserRouter([
 
 export default function App() {
   return (
-    <TweetProvider>
-      <div className="bg-neutral-1000 ">
-        <RouterProvider router={router} />
-      </div>
-    </TweetProvider>
+    <UserProvider>
+      <TweetProvider>
+        <div className="bg-neutral-1000 ">
+          <RouterProvider router={router} />
+        </div>
+      </TweetProvider>
+    </UserProvider>
   );
 }

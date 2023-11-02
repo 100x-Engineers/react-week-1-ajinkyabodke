@@ -37,7 +37,7 @@ function EditProfile() {
       <main className="relative">
         {/* Profile Icon */}
         <img
-          className="w-4.2rem h-4.2rem absolute -top-12 left-1 rounded-7xl border-4 border-neutral-1000"
+          className="absolute -top-12 left-1 h-4.2rem w-4.2rem rounded-7xl border-4 border-neutral-1000"
           src={ProfileAvatar}
         />
         <section className="relative flex flex-col items-center gap-5 self-stretch pt-5">

@@ -49,7 +49,7 @@ function Button(props) {
   };
   const buttonSize = {
     sm: "text-sm px-4 py-1.5 font-bold",
-    md: "w-5.2rem px-6 py-3 shadow-3xl md:w-13.8rem md:rounded-6xl",
+    md: "w-[7rem] px-6 py-3 shadow-3xl md:w-13.8rem md:rounded-6xl",
     full: "p-5 w-full",
   };
   const classes = [

@@ -1,11 +1,12 @@
-import UserAvatar from "../assets/user-avatar.png";
+import UserAvatar from "../assets/profile_avatar.png";
 
 import Retweet from "../assets/retweet.svg";
 import Heart from "../assets/heart.svg";
 import Reach from "../assets/reach.svg";
 import Share from "../assets/share.svg";
 import PropTypes from "prop-types"; // ES6
-import Icon from "./Icon";
+// import Icon from "./Icon";
+import Comment from "../assets/comment.svg";
 
 Tweet.propTypes = {
   id: PropTypes.string.isRequired,
@@ -20,10 +21,10 @@ Tweet.propTypes = {
 };
 
 function Tweet({
-  id,
-  name,
-  handle,
-  time,
+  id = "ajinkyabodke",
+  name = "Ajinkya B",
+  handle = "ajinkyabodke",
+  time = "12h",
   tweetdata,
   comments = 0,
   retweets = 0,
@@ -44,7 +45,7 @@ function Tweet({
       </div>
       <div className="w-full">
         <div className="mb-1">
-          <div className="mb-1 text-neutral-50">
+          <div className="mb-1 text-neutral-50 flex gap-1">
             <span className="text-base font-medium">{name}</span>
             <span className="text-neutral-500">@{handle}</span>
             <span className="text-neutral-500">•</span>
@@ -55,7 +56,14 @@ function Tweet({
           </p>
         </div>
         <div className="flex items-center justify-between py-3 text-neutral-500 lg:pr-5">
-          <Icon type="Comment" value={comments} />
+          {/* <Icon type="Comment" value={comments} /> */}
+          <div className="flex items-center justify-between gap-0.3rem">
+            <img src={Comment} />
+            <span className="text-sm font-normal text-neutral-500">
+              {comments}
+            </span>
+          </div>
+
           <div className="flex items-center justify-between gap-0.3rem">
             <img src={Retweet} />
             <span className="text-sm font-normal text-neutral-500">

@@ -1,5 +1,4 @@
 
-import Comment from "../assets/comment.svg";
 
 function Icon({ type, value }) {
   return (
