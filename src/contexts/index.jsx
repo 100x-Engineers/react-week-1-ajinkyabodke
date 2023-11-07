@@ -22,7 +22,7 @@ const SampleTweets = [
     name: "Ajinkya B",
     username: "ajinkyabodke",
     postedAt: "1699355379971",
-    tweetText: "Don't wish for it, work for it.",
+    tweetText: "Join us on 100X because on a scale of 1 to X, we're 100X !",
     comments: 11,
     retweets: 269,
     likes: 1869,
