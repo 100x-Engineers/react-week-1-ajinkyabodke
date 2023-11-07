@@ -2,11 +2,16 @@ import { createContext, useState } from "react";
 
 const sampleUserData = {
   name: "Ajinkya Bodke",
-  email: "example@gmail.com",
+  email: "",
   month: 0,
   day: 1,
   year: 2001,
   password: "",
+  username: "",
+  id:"",
+  bio:"Full Stack Developer👨‍💻",
+  website: "https://ajinkyabodke.com/",
+  location: "India",
 };
 
 export const UserContext = createContext();

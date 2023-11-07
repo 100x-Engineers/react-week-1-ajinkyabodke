@@ -10,13 +10,13 @@ import { URLs } from "../../constants";
 
 function CreateAccountStep1() {
   const navigate = useNavigate();
-  const { setFormData } = useContext(UserContext);
+  const { formData,setFormData } = useContext(UserContext);
   const [inputValues, setInputValues] = useState({
     name: "",
     email: "",
     day: 1,
     month: 0,
-    year: 2000,
+    year: 2023,
   });
   const handleInputChange = (field, value) => {
     setInputValues((c) => {
@@ -34,7 +34,7 @@ function CreateAccountStep1() {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          setFormData(inputValues);
+          setFormData({...formData,...inputValues});
           console.info("💸your submitted values:", inputValues);
           navigate(URLs.signUpStep2);
         }}

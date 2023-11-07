@@ -1,3 +1,3 @@
-# 100x - Microbloggin Platform
+# 100x - Microblogging Platform
 
-https://100x-react.vercel.app/
+https://100x-site.vercel.app/

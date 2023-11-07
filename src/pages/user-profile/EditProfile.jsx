@@ -7,10 +7,42 @@ import Banner from "../../components/Banner";
 import Fieldset from "../../components/Fieldset";
 import { Link } from "react-router-dom";
 import { URLs } from "../../constants";
+import { useContext } from "react";
+import { UserContext } from "../../contexts/UserContext";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function EditProfile() {
+  const {formData} = useContext(UserContext);
+  const { setFormData } = useContext(UserContext);
+  const userData = formData;
+  const navigate = useNavigate();
+
+  const [inputValues, setInputValues] = useState({
+    name: userData.name,
+    bio: userData.bio,
+    location: userData.location,
+    website: userData.website,
+  });
+
+  const handleInputChange = (field, value) => {
+    setInputValues((c) => {
+      const updatedValues = {
+        ...c,
+        [field]: value,
+      };
+      console.log("🎉updated form :", updatedValues);
+      return updatedValues;
+    });
+  };
+
   return (
-    <div className="px-4">
+    <form onSubmit={(e) => {
+      e.preventDefault();
+      setFormData(inputValues);
+      console.info("💸your submitted values:", inputValues);
+      navigate(URLs.profile);
+    }} className="px-4">
       <header className="flex flex-col items-start gap-3">
         <section className="flex items-center justify-between self-stretch py-3">
           <div className="flex items-center gap-5">
@@ -21,9 +53,9 @@ function EditProfile() {
               Edit profile
             </p>
           </div>
-          <Link to={URLs.profile}>
+       
             <Button size="md">Save</Button>
-          </Link>
+      
         </section>
         {/* Banner Image */}
         <div className="relative flex w-full">
@@ -40,14 +72,15 @@ function EditProfile() {
           className="absolute -top-12 left-1 h-4.2rem w-4.2rem rounded-7xl border-4 border-neutral-1000"
           src={ProfileAvatar}
         />
-        <section className="relative flex flex-col items-center gap-5 self-stretch pt-5">
-          <Fieldset text="Name" type="text" />
-          <Fieldset text="Bio" type="text" />
-          <Fieldset text="Location" type="text" />
-          <Fieldset text="Website" type="text" />
-        </section>
+
+        <div className="relative flex flex-col items-center gap-5 self-stretch pt-5">
+          <Fieldset text="Name"  inputValue={inputValues.name} onInputChange={(value) => handleInputChange("name", value)}type="text" />
+          <Fieldset text="Bio"  inputValue={inputValues.bio} onInputChange={(value) => handleInputChange("bio", value)} type="text" />
+          <Fieldset text="Location" inputValue={inputValues.location} onInputChange={(value) => handleInputChange("location", value)} type="text" />
+          <Fieldset text="Website"  inputValue={inputValues.website} onInputChange={(value) => handleInputChange("website", value)} type="text" />
+        </div>
       </main>
-    </div>
+    </form>
   );
 }
 

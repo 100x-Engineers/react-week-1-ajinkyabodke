@@ -33,7 +33,7 @@ const DatePicker = ({ handleInputChange }) => {
             handleInputChange("month", +e.target.value); //++ to convert string to +ve integer
           }}
           placeholder="Month"
-          className="w-full bg-transparent text-neutral-50 placeholder:text-neutral-500 focus:outline-none"
+          className="w-full bg-neutral-1000 text-neutral-50 placeholder:text-neutral-500 focus:outline-none"
         >
           {MONTHS.map((m, i) => {
             return (
@@ -53,7 +53,7 @@ const DatePicker = ({ handleInputChange }) => {
           onChange={(e) => {
             handleInputChange("day", +e.target.value);
           }}
-          className="w-full bg-transparent text-neutral-50 placeholder:text-neutral-500 focus:outline-none"
+          className="w-full bg-neutral-1000 text-neutral-50  placeholder:text-neutral-500 focus:outline-none"
         >
           {DAYS.map((d, i) => {
             return <option key={i}>{d}</option>;
@@ -69,7 +69,7 @@ const DatePicker = ({ handleInputChange }) => {
             handleInputChange("year", +e.target.value);
           }}
           defaultValue={currentYear}
-          className="w-full bg-transparent text-neutral-50 placeholder:text-neutral-500 focus:outline-none"
+          className="w-full bg-neutral-1000 text-neutral-50 placeholder:text-neutral-500 focus:outline-none"
         >
           {YEARS.map((y, i) => {
             return (

@@ -8,13 +8,17 @@ import { useContext } from "react";
 import { TweetContext } from "../../contexts";
 import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
+import { UserContext } from '../../contexts/UserContext';
+
 
 const tweetLimit = 280;
 
 function ComposeTweet() {
   const navigate = useNavigate();
+  const { formData: userData } = useContext(UserContext);
 
   const { userTweets, setUserTweets } = useContext(TweetContext);
+  
 
   const [tweetText, setTweetText] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -38,9 +42,16 @@ function ComposeTweet() {
             setUserTweets([
               ...userTweets,
               {
-                tweetText,
-                id: uuidv4(),
+                id:  uuidv4(),
                 timestamp: Date.now(),
+                name: userData.name,
+                username: userData.name.replace(/\s/g, '').toLowerCase(),
+                postedAt: Date.now(),
+                comments: 0,
+                retweets: 0,
+                likes: 0,
+                reach: 0,
+                tweetText,
               },
             ]);
             console.log(userTweets);

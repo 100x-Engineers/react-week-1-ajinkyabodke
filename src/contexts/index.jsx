@@ -1,5 +1,6 @@
 import { createContext, useState } from "react";
 export const TweetContext = createContext();
+import PropTypes from "prop-types"; // ES6
 
 export const TweetProvider = ({ children }) => {
   const [userTweets, setUserTweets] = useState(SampleTweets);
@@ -11,17 +12,21 @@ export const TweetProvider = ({ children }) => {
   );
 };
 
+TweetProvider.propTypes = {
+  children: PropTypes.node
+}
+
+
 const SampleTweets = [
   {
-    id: "ajinkyabodke",
+    id: "1",
     name: "Ajinkya B",
-    handle: "ajinkyabodke",
-    time: "12h",
-    timestamp: "10h",
+    username: "ajinkyabodke",
+    postedAt: "1699355379971",
     tweetText: "Don't wish for it, work for it.",
-    comments: "11",
-    retweets: "269",
-    likes: "1869",
-    reach: "69.9k",
+    comments: 11,
+    retweets: 269,
+    likes: 1869,
+    reach: 99,
   },
 ];

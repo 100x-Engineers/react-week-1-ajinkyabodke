@@ -1,6 +1,6 @@
 import Tweet from "../../components/Tweet";
 
-import Toast from "../../components/Toast";
+// import Toast from "../../components/Toast";
 
 import NewTweet from "../../components/NewTweetButton";
 import Header from "../../components/Header";
@@ -30,15 +30,7 @@ function Home() {
           {tweetsData.map((tweet, index) => (
             <Tweet
               key={index}
-              id={tweet.id}
-              name={tweet.name}
-              handle={tweet.handle}
-              time={tweet.time}
-              tweetdata={tweet.tweetText}
-              comments={tweet.comments}
-              retweets={tweet.retweets}
-              likes={tweet.likes}
-              reach={tweet.reach}
+             {...tweet}
             />
           ))}
         </section>
