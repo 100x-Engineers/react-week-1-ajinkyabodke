@@ -1,5 +1,3 @@
-
-
 function Icon({ type, value }) {
   return (
     <div className="flex items-center justify-between gap-0.3rem">

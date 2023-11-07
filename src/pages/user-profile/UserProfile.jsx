@@ -12,22 +12,11 @@ function UserProfile() {
     <div className="flex min-h-screen flex-col">
       <ProfileHeader />
 
-      <main className="flex-1 overflow-y-auto mb-16">
+      <main className="mb-16 flex-1 overflow-y-auto">
         {/* Tweets */}
         <section>
           {tweetsData.map((tweet, index) => (
-            <Tweet
-              key={index}
-              id={tweet.id}
-              name={tweet.name}
-              handle={tweet.handle}
-              time={tweet.time}
-              tweetdata={tweet.tweetText}
-              comments={tweet.comments}
-              retweets={tweet.retweets}
-              likes={tweet.likes}
-              reach={tweet.reach}
-            />
+            <Tweet key={index} {...tweet} />
           ))}
         </section>
       </main>

@@ -8,8 +8,7 @@ import { useContext } from "react";
 import { TweetContext } from "../../contexts";
 import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
-import { UserContext } from '../../contexts/UserContext';
-
+import { UserContext } from "../../contexts/UserContext";
 
 const tweetLimit = 280;
 
@@ -18,7 +17,6 @@ function ComposeTweet() {
   const { formData: userData } = useContext(UserContext);
 
   const { userTweets, setUserTweets } = useContext(TweetContext);
-  
 
   const [tweetText, setTweetText] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -42,10 +40,10 @@ function ComposeTweet() {
             setUserTweets([
               ...userTweets,
               {
-                id:  uuidv4(),
+                id: uuidv4(),
                 timestamp: Date.now(),
                 name: userData.name,
-                username: userData.name.replace(/\s/g, '').toLowerCase(),
+                username: userData.name.replace(/\s/g, "").toLowerCase(),
                 postedAt: Date.now(),
                 comments: 0,
                 retweets: 0,
@@ -60,7 +58,7 @@ function ComposeTweet() {
             setTweetText("");
           }}
         >
-          <span className="text-center text-base font-bold not-italic leading-normal text-neutral-50 whitespace-nowrap">
+          <span className="whitespace-nowrap text-center text-base font-bold not-italic leading-normal text-neutral-50">
             {isLoading ? "Posting..." : "Post"}
           </span>
         </Button>

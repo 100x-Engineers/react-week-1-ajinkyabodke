@@ -13,9 +13,8 @@ export const TweetProvider = ({ children }) => {
 };
 
 TweetProvider.propTypes = {
-  children: PropTypes.node
-}
-
+  children: PropTypes.node,
+};
 
 const SampleTweets = [
   {
@@ -28,5 +27,7 @@ const SampleTweets = [
     retweets: 269,
     likes: 1869,
     reach: 99,
+    isLiked: false,
+    isRetweeted: false,
   },
 ];

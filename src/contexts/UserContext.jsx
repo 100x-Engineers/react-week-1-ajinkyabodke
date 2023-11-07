@@ -8,8 +8,8 @@ const sampleUserData = {
   year: 2001,
   password: "",
   username: "",
-  id:"",
-  bio:"Full Stack Developer👨‍💻",
+  id: "",
+  bio: "Full Stack Developer👨‍💻",
   website: "https://ajinkyabodke.com/",
   location: "India",
 };

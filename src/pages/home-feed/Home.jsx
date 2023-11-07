@@ -28,10 +28,7 @@ function Home() {
       <main className="flex w-full flex-col pb-20">
         <section>
           {tweetsData.map((tweet, index) => (
-            <Tweet
-              key={index}
-             {...tweet}
-            />
+            <Tweet key={index} {...tweet} />
           ))}
         </section>
 

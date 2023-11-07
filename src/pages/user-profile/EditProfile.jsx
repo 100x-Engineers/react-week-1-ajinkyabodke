@@ -13,7 +13,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function EditProfile() {
-  const {formData} = useContext(UserContext);
+  const { formData } = useContext(UserContext);
   const { setFormData } = useContext(UserContext);
   const userData = formData;
   const navigate = useNavigate();
@@ -37,12 +37,15 @@ function EditProfile() {
   };
 
   return (
-    <form onSubmit={(e) => {
-      e.preventDefault();
-      setFormData(inputValues);
-      console.info("💸your submitted values:", inputValues);
-      navigate(URLs.profile);
-    }} className="px-4">
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        setFormData(inputValues);
+        console.info("💸your submitted values:", inputValues);
+        navigate(URLs.profile);
+      }}
+      className="px-4"
+    >
       <header className="flex flex-col items-start gap-3">
         <section className="flex items-center justify-between self-stretch py-3">
           <div className="flex items-center gap-5">
@@ -53,9 +56,8 @@ function EditProfile() {
               Edit profile
             </p>
           </div>
-       
-            <Button size="md">Save</Button>
-      
+
+          <Button size="md">Save</Button>
         </section>
         {/* Banner Image */}
         <div className="relative flex w-full">
@@ -74,10 +76,30 @@ function EditProfile() {
         />
 
         <div className="relative flex flex-col items-center gap-5 self-stretch pt-5">
-          <Fieldset text="Name"  inputValue={inputValues.name} onInputChange={(value) => handleInputChange("name", value)}type="text" />
-          <Fieldset text="Bio"  inputValue={inputValues.bio} onInputChange={(value) => handleInputChange("bio", value)} type="text" />
-          <Fieldset text="Location" inputValue={inputValues.location} onInputChange={(value) => handleInputChange("location", value)} type="text" />
-          <Fieldset text="Website"  inputValue={inputValues.website} onInputChange={(value) => handleInputChange("website", value)} type="text" />
+          <Fieldset
+            text="Name"
+            inputValue={inputValues.name}
+            onInputChange={(value) => handleInputChange("name", value)}
+            type="text"
+          />
+          <Fieldset
+            text="Bio"
+            inputValue={inputValues.bio}
+            onInputChange={(value) => handleInputChange("bio", value)}
+            type="text"
+          />
+          <Fieldset
+            text="Location"
+            inputValue={inputValues.location}
+            onInputChange={(value) => handleInputChange("location", value)}
+            type="text"
+          />
+          <Fieldset
+            text="Website"
+            inputValue={inputValues.website}
+            onInputChange={(value) => handleInputChange("website", value)}
+            type="text"
+          />
         </div>
       </main>
     </form>

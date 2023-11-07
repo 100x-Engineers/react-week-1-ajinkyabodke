@@ -1,8 +1,8 @@
-import { clsx } from "clsx"
-import { twMerge } from "tailwind-merge"
+import { clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs) {
-  return twMerge(clsx(inputs))
+  return twMerge(clsx(inputs));
 }
 
 export function getRelativeTime(postedAt) {
@@ -24,11 +24,9 @@ export function getRelativeTime(postedAt) {
   } else {
     const postedDate = new Date(postedAt);
     const day = postedDate.getDate();
-    const month = postedDate.toLocaleString('default', { month: 'short' });
+    const month = postedDate.toLocaleString("default", { month: "short" });
     const year = postedDate.getFullYear();
 
     return `${day} ${month} ${year}`;
   }
 }
-
-

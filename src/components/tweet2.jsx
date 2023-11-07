@@ -1,13 +1,13 @@
-import Comment from '@/assets/comment.svg';
-import Heart from '@/assets/heart.svg';
-import UserAvatar from '@/assets/profile_avatar.png';
-import Reach from '@/assets/reach.svg';
-import Share from '@/assets/share.svg';
-import { TweetsStoreContext } from '@/contexts';
-import { cn } from '@/utils';
-import PropTypes from 'prop-types';
-import { useContext } from 'react';
-import Button from './Button';
+import Comment from "@/assets/comment.svg";
+import Heart from "@/assets/heart.svg";
+import UserAvatar from "@/assets/profile_avatar.png";
+import Reach from "@/assets/reach.svg";
+import Share from "@/assets/share.svg";
+import { TweetsStoreContext } from "@/contexts";
+import { cn } from "@/utils";
+import PropTypes from "prop-types";
+import { useContext } from "react";
+import Button from "./Button";
 
 function Tweet({
   id,
@@ -50,7 +50,7 @@ function Tweet({
         </div>
         <div className="flex items-center justify-between py-3 text-neutral-500 lg:pr-5">
           {/* <Icon type="Comment" value={comments} /> */}
-          <div className="gap-0.3rem flex items-center justify-between">
+          <div className="flex items-center justify-between gap-0.3rem">
             <img src={Comment} />
             <span className="text-sm font-normal text-neutral-500">
               {comments}
@@ -90,8 +90,8 @@ function Tweet({
               setUserTweets(tweets);
             }}
             className={cn(
-              isRetweeted ? 'text-blue-500' : 'text-neutral-500',
-              'gap-0.3rem flex items-center justify-between',
+              isRetweeted ? "text-blue-500" : "text-neutral-500",
+              "flex items-center justify-between gap-0.3rem",
             )}
           >
             <svg
@@ -100,8 +100,8 @@ function Tweet({
               viewBox="0 0 21 15"
               fill="none"
               className={cn(
-                isRetweeted ? 'stroke-blue-500' : 'stroke-neutral-500',
-                'h-4 w-4',
+                isRetweeted ? "stroke-blue-500" : "stroke-neutral-500",
+                "h-4 w-4",
               )}
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -125,23 +125,23 @@ function Tweet({
               </g>
             </svg>
 
-            <span className={'text-sm font-normal'}>
+            <span className={"text-sm font-normal"}>
               {isRetweeted ? retweets + 1 : retweets}
             </span>
           </Button>
-          <div className="gap-0.3rem flex items-center justify-between">
+          <div className="flex items-center justify-between gap-0.3rem">
             <img src={Heart} />
             <span className="text-sm font-normal text-neutral-500">
               {likes}
             </span>
           </div>
-          <div className="gap-0.3rem flex items-center justify-between">
+          <div className="flex items-center justify-between gap-0.3rem">
             <img src={Reach} />
             <span className="text-sm font-normal text-neutral-500">
               {reach}
             </span>
           </div>
-          <div className="gap-0.3rem flex items-center justify-between">
+          <div className="flex items-center justify-between gap-0.3rem">
             <img src={Share} />
           </div>
         </div>

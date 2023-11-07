@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import PasswordEye from "../assets/password-eye.svg";
 import PropTypes from "prop-types"; // ES6
