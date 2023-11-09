@@ -22,7 +22,7 @@ export function getRelativeTime(postedAt) {
   } else if (hoursAgo < 24) {
     return `${hoursAgo} hours ago`;
   } else {
-    const postedDate = new Date(postedAt);
+    const postedDate = new Date(postedAt * 1000); // Convert to seconds
     const day = postedDate.getDate();
     const month = postedDate.toLocaleString("default", { month: "short" });
     const year = postedDate.getFullYear();
@@ -30,3 +30,4 @@ export function getRelativeTime(postedAt) {
     return `${day} ${month} ${year}`;
   }
 }
+

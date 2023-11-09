@@ -30,4 +30,17 @@ const SampleTweets = [
     isLiked: false,
     isRetweeted: false,
   },
+  {
+    id: "2",
+    name: "Ajinkya B",
+    username: "ajinkyabodke",
+    postedAt: "1699363303000",
+    tweetText: "X is where you started, but 100X is where you'll thrive.",
+    comments: 11,
+    retweets: 299,
+    likes: 189,
+    reach: 99,
+    isLiked: false,
+    isRetweeted: false,
+  },
 ];
