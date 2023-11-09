@@ -14,7 +14,6 @@ import { useContext } from "react";
 function Home() {
   const tweets = useContext(TweetContext);
   const tweetsData = [...tweets.userTweets].reverse();
-  console.log("rever", tweetsData);
 
   return (
     <div className="bg-neutral-1000">

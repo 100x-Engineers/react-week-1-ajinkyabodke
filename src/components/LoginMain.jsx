@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import Button from "../Button";
+import Button from "./Button";
 
-import Heading from "../Heading";
-import Text from "../Text";
-import { URLs } from "../../constants.js";
+import Heading from "./Heading";
+import Text from "./Text";
+import { URLs } from "../constants";
 
-function TweetMain() {
+function LoginMain(onSignIn) {
   return (
     <main className="flex w-full flex-grow items-center justify-center bg-neutral-1000">
       <section className="flex w-full flex-col gap-10 px-7">
@@ -38,4 +38,4 @@ function TweetMain() {
   );
 }
 
-export default TweetMain;
+export default LoginMain;

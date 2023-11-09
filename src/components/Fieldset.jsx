@@ -4,7 +4,7 @@ import PropTypes from "prop-types"; // ES6
 
 Fieldset.propTypes = {
   text: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(["text", "email"]).isRequired,
+  type: PropTypes.oneOf(["text", "email", "password"]).isRequired,
   inputValue: PropTypes.string,
   onInputChange: PropTypes.func,
 };
