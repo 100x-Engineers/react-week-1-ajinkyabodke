@@ -1,7 +1,7 @@
 export const URLs = Object.freeze({
   BASE_URL: "https://one00x-react-backend.onrender.com",
   home: "/",
-  feed: "/home",
+  feed: "/feed",
   profile: "/profile",
   edit: "/edit-profile",
   compose: "/compose",

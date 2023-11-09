@@ -1,11 +1,15 @@
 import { Link } from "react-router-dom";
 import Button from "./Button";
-
 import Heading from "./Heading";
 import Text from "./Text";
 import { URLs } from "../constants";
+import PropTypes from "prop-types"; // ES6
 
-function LoginMain(onSignIn) {
+LoginMain.propTypes = {
+  onSignIn: PropTypes.func.isRequired,
+};
+
+function LoginMain({ onSignIn }) {
   return (
     <main className="flex w-full flex-grow items-center justify-center bg-neutral-1000">
       <section className="flex w-full flex-col gap-10 px-7">
@@ -27,11 +31,15 @@ function LoginMain(onSignIn) {
         </div>
         <section className="flex flex-col gap-5">
           <Text text="Already have an account?" />
-          <Link to={URLs.feed}>
-            <Button variant="outline" type="primary" size="full">
-              Sign in
-            </Button>
-          </Link>
+
+          <Button
+            variant="outline"
+            type="primary"
+            size="full"
+            onClick={onSignIn}
+          >
+            Sign in
+          </Button>
         </section>
       </section>
     </main>
