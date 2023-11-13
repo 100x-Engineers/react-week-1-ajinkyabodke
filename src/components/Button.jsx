@@ -48,7 +48,7 @@ function Button(props) {
     secondary: "text-neutral-50",
   };
   const buttonSize = {
-    sm: "text-sm px-4 py-1.5 font-bold",
+    sm: "text-sm px-4 py-1.5 font-bold w-max",
     md: "w-[7rem] px-6 py-3 shadow-3xl md:w-13.8rem md:rounded-6xl",
     full: "p-5 w-full",
   };

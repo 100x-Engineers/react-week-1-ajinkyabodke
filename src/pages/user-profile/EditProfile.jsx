@@ -57,7 +57,7 @@ function EditProfile() {
             </p>
           </div>
 
-          <Button size="md">Save</Button>
+          <Button size="sm">Save</Button>
         </section>
         {/* Banner Image */}
         <div className="relative flex w-full">
