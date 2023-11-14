@@ -19,6 +19,16 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
+    path: URLs.signUp,
+    element: <Base />,
+    children: [
+      { path: URLs.signUpStep1, element: <CreateAccountStep1 /> },
+      { path: URLs.signUpStep2, element: <CreateAccountStep2 /> },
+      { path: URLs.signUpStep3, element: <CreateAccountStep3 /> },
+      { path: URLs.signUpStep4, element: <CreateAccountStep4 /> },
+    ],
+  },
+  {
     path: URLs.signUpStep1,
     element: (
       <Base step="1">
