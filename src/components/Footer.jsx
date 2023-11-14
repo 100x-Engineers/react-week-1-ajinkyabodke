@@ -14,10 +14,10 @@ function Footer({ page }) {
   return (
     <footer className="fixed bottom-0 flex w-full items-center justify-center gap-10 border-t border-neutral-800 bg-neutral-1000 px-6 py-1.1rem">
       <Link to={URLs.feed}>
-        <img src={page === "home" ? HomeActive : HomeInactive} />
+        <img alt="home-button" src={page === "home" ? HomeActive : HomeInactive} />
       </Link>
       <Link to={URLs.profile}>
-        <img src={page === "profile" ? ProfileActive : ProfileInactive} />
+        <img alt="profile-button" src={page === "profile" ? ProfileActive : ProfileInactive} />
       </Link>
     </footer>
   );

@@ -50,7 +50,7 @@ function ComposeTweet() {
     <div>
       <header className="flex items-center justify-between  px-4 py-3">
         <button onClick={() => navigate(-1)}>
-          <img src={Cancel} />
+          <img alt="cancel" src={Cancel} />
         </button>
         <Button
           disabled={isTweetExceedingLimit || tweetText.trim() === ""}

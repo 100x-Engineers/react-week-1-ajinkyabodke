@@ -69,7 +69,7 @@ function Tweet({
         <div className="flex items-center justify-between py-3 text-neutral-500 lg:pr-5">
           {/* <Icon type="Comment" value={comments} /> */}
           <div className="flex items-center justify-between gap-0.3rem">
-            <img src={Comment} />
+            <img alt="comment" src={Comment} />
             <span className="text-sm font-normal text-neutral-500">
               {comments}
             </span>
@@ -260,13 +260,13 @@ function Tweet({
           </button>
 
           <div className="flex items-center justify-between gap-0.3rem">
-            <img src={Reach} />
+            <img alt="reach" src={Reach} />
             <span className="text-sm font-normal text-neutral-500">
               {reach}
             </span>
           </div>
           <div className="flex items-center justify-between gap-0.3rem">
-            <img src={Share} />
+            <img alt="share" src={Share} />
           </div>
         </div>
       </div>

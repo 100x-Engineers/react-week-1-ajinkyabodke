@@ -17,6 +17,7 @@ function ProfileHeader() {
       <section className="relative px-4 pb-3 pt-2">
         {/* Profile Icon */}
         <img
+        alt="profile_avatar"
           className="absolute -top-8 h-4.2rem w-4.2rem rounded-7xl border-4 border-neutral-1000"
           src={ProfileAvatar}
         />
