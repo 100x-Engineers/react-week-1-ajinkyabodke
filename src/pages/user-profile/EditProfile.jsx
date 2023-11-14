@@ -13,8 +13,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function EditProfile() {
-  const { formData } = useContext(UserContext);
-  const { setFormData } = useContext(UserContext);
+  const { formData, setFormData } = useContext(UserContext);
+  const [isLoading, setIsLoading] = useState(false);
   const userData = formData;
   const navigate = useNavigate();
 
@@ -36,13 +36,23 @@ function EditProfile() {
     });
   };
 
+  const handleSubmit = () => {
+    setIsLoading(true);
+
+    // Simulating an API call with a timeout
+    setTimeout(() => {
+      setFormData(inputValues);
+      console.info("💸your submitted values:", inputValues);
+      navigate(URLs.profile);
+      setIsLoading(false);
+    }, 300);
+  };
+
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        setFormData(inputValues);
-        console.info("💸your submitted values:", inputValues);
-        navigate(URLs.profile);
+        handleSubmit();
       }}
       className="px-4"
     >
@@ -57,7 +67,9 @@ function EditProfile() {
             </p>
           </div>
 
-          <Button size="sm">Save</Button>
+          <Button size="sm" type="submit" disabled={isLoading}>
+            {isLoading ? "Saving..." : "Save"}
+          </Button>
         </section>
         {/* Banner Image */}
         <div className="relative flex w-full">

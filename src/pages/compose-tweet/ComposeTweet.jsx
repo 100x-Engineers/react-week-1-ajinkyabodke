@@ -23,6 +23,29 @@ function ComposeTweet() {
 
   const isTweetExceedingLimit = tweetText.length > tweetLimit;
 
+  const handleTweetPost = async () => {
+    setIsLoading(true);
+    await new Promise((resolve) => setTimeout(resolve, 300));
+    setUserTweets([
+      ...userTweets,
+      {
+        id: uuidv4(),
+        timestamp: Date.now(),
+        name: userData.name,
+        username: userData.name.replace(/\s/g, "").toLowerCase(),
+        postedAt: Date.now(),
+        comments: 0,
+        retweets: 0,
+        likes: 0,
+        reach: 0,
+        tweetText,
+      },
+    ]);
+    navigate(URLs.feed);
+    setIsLoading(false);
+    setTweetText("");
+  };
+
   return (
     <div>
       <header className="flex items-center justify-between  px-4 py-3">
@@ -33,30 +56,7 @@ function ComposeTweet() {
           disabled={isTweetExceedingLimit || tweetText.trim() === ""}
           variant="solid"
           size="md"
-          onClick={async () => {
-            setIsLoading(true);
-            await new Promise((resolve) => setTimeout(resolve, 300));
-            console.log(userTweets);
-            setUserTweets([
-              ...userTweets,
-              {
-                id: uuidv4(),
-                timestamp: Date.now(),
-                name: userData.name,
-                username: userData.name.replace(/\s/g, "").toLowerCase(),
-                postedAt: Date.now(),
-                comments: 0,
-                retweets: 0,
-                likes: 0,
-                reach: 0,
-                tweetText,
-              },
-            ]);
-            console.log(userTweets);
-            navigate(URLs.feed);
-            setIsLoading(false);
-            setTweetText("");
-          }}
+          onClick={handleTweetPost}
         >
           <span className="whitespace-nowrap text-center text-base font-bold not-italic leading-normal text-neutral-50">
             {isLoading ? "Posting..." : "Post"}
