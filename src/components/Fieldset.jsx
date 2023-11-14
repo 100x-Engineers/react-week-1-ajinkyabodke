@@ -7,8 +7,10 @@ Fieldset.propTypes = {
   type: PropTypes.oneOf(["text", "email", "password"]).isRequired,
   inputValue: PropTypes.string,
   onInputChange: PropTypes.func,
+  error: PropTypes.string, // Add error prop
 };
-function Fieldset({ text, type, inputValue, onInputChange, ...rest }) {
+
+function Fieldset({ text, type, inputValue, onInputChange, error, ...rest }) {
   // Add a state variable to manage password visibility
   const [showPassword, setShowPassword] = useState(false);
 
@@ -16,8 +18,13 @@ function Fieldset({ text, type, inputValue, onInputChange, ...rest }) {
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
+
   return (
-    <fieldset className="group flex items-center self-stretch rounded border border-solid border-neutral-500 px-3 py-4 pt-2 focus-within:border-twitter-default">
+    <fieldset
+      className={`group flex items-center self-stretch rounded border border-solid ${
+        error ? "border-error" : "border-neutral-500"
+      } px-3 py-4 pt-2 focus-within:border-twitter-default`}
+    >
       <legend className="text-xs font-medium not-italic leading-normal text-neutral-500 group-focus-within:text-twitter-default">
         <div className="px-2">{text}</div>
       </legend>
@@ -26,7 +33,9 @@ function Fieldset({ text, type, inputValue, onInputChange, ...rest }) {
         placeholder={text}
         value={inputValue}
         onChange={(e) => onInputChange(e.target.value)}
-        className="w-full bg-transparent text-neutral-50 placeholder:text-neutral-500 focus:outline-none"
+        className={`w-full bg-transparent text-neutral-50 placeholder:text-neutral-500 focus:outline-none ${
+          error ? "border-error" : "" // Add a border color for errors
+        }`}
         {...rest}
       />
       {type === "password" && (
@@ -51,6 +60,9 @@ function Fieldset({ text, type, inputValue, onInputChange, ...rest }) {
             />
           )}
         </button>
+      )}
+      {error && (
+        <div className="mt-1 text-sm whitespace-nowrap text-error">{error}</div> // Display error message
       )}
     </fieldset>
   );
